@@ -44,52 +44,38 @@ ul li {
 /* ===============================
    Common Utility Classes
    =============================== */
-/* Konika Button Styles */
-.school-btn {
-  display: inline-block;
+/* Custom Buttons */
+.motor-btn {
   padding: 12px 28px;
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
   text-decoration: none;
-}
-
-/* Primary Button */
-.school-btn-primary {
-  background-color: var(--primary);
-  color: #fff;
-  border: 2px solid var(--primary);
-}
-.my-btn-small-primary {
-  padding: 5px 12px;
-  color: #fff;
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
   transition: all 0.3s ease;
 }
-.my-btn-small-primary:hover {
-  background-color: #fff;
-  border: 2px solid var(--primary);
-}
 
-.konika-btn-primary:hover {
-  background-color: transparent;
-  color: var(--primary);
-}
-
-/* Secondary Button */
-.school-btn-secondary {
-  background-color: transparent;
+.motor-btn-primary {
+  background: #dc3545;
   color: #fff;
-  border: 2px solid #fff;
+  border: none;
 }
 
-.school-btn-secondary:hover {
-  background-color: #fff;
-  color: var(--primary);
+.motor-btn-primary:hover {
+  background: #b02a37;
 }
+
+.motor-btn-secondary {
+  background: #fff;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+}
+
+.motor-btn-secondary:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Section title */
 
 .section-title h4 {
   color: var(--secondary);
@@ -118,7 +104,7 @@ ul li {
   /* background-color: #fff; */
   /* border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary); */
-  padding: 2px 0px;
+  padding: 0px 0px;
   overflow: hidden;
 }
 
@@ -126,7 +112,7 @@ ul li {
   background-color: var(--primary);
   color: #fff;
   font-weight: bold;
-  padding: 8px 27px 9px 21px;
+  padding: 4px 19px 4px 19px;
   margin-right: 45px;
   white-space: nowrap;
   position: relative;
@@ -139,7 +125,7 @@ ul li {
 .notice-label::after {
   content: "";
   position: absolute;
-  top: -1px;
+  top: -6px;
   right: -20px;
   width: 0px;
   height: 0;
@@ -159,7 +145,7 @@ ul li {
   white-space: nowrap;
   animation: scroll-left 20s linear infinite;
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .scroll-text:hover {
@@ -212,9 +198,10 @@ ul li {
   }
 }
 
-.navbar-brand img {
-  filter: brightness(0) invert(0); /* logo black */
-}
+/* logo convert black color css */
+/* .navbar-brand img {
+  filter: brightness(0) invert(0);  
+} */
 
 .navbar-brand span {
   color: #000 !important; /* text black */
@@ -524,8 +511,25 @@ ul li {
   transition: opacity 0.3s ease;
 }
 
-.custom-indicators .active {
+/* .custom-indicators .active {
   opacity: 1;
+} */
+/* Carousel Controls */
+
+.custom-arrow:hover {
+  background: rgba(220, 53, 69, 0.8);
+}
+
+/* Indicators */
+.custom-indicators button {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.custom-indicators .active {
+  background-color: #dc3545;
 }
 
 @media (max-width: 768px) {
@@ -534,6 +538,7 @@ ul li {
     padding-left: 0;
   }
 }
+
 /* -----------About Section Styles ----------------- */
 .about-section {
   padding: 40px 0;
