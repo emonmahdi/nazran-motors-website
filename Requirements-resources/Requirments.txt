@@ -1,0 +1,7 @@
+1. Motors Type website. 
+2. Eccomer type product cart and order place
+3. Product show the beautiful UI
+4. Header - search, card include
+5. Section - (Navabr, Slider, Faq, Best Bike, Why choose us, Innovations section)
+6. About, Contact, All Product, single product, cart, login-reg, user Dashboard,Order success page)
+	

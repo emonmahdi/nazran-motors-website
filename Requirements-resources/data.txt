@@ -1,0 +1,25 @@
+5) Homepage layout (sections)
+
+Hero: Strong banner + “Shop Motors” & “Shop Parts” CTAs
+
+Quick Finder: “Find by Power (HP), Voltage, Phase, RPM, Brand”
+
+Featured Categories: Induction Motors, Gear Motors, Servo, VFDs, Bearings, Capacitors
+
+Top Brands: Brand carousel
+
+Bestsellers / New arrivals
+
+Bundles & Offers
+
+Why Nazran Motors: Warranty, Genuine parts, Fast delivery, Expert support
+
+Testimonials & Client logos
+
+Service & Warranty CTA
+
+Blog highlights
+
+Newsletter signup
+
+Footer: Contact, Policies, Socials, WhatsApp/Phone floating button
