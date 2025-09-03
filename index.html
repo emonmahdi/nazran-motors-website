@@ -15,8 +15,8 @@
    <link href="assets/css/style.css" rel="stylesheet">
    <!-- Favicon (Optional) -->
    <link rel="icon" href="assets/images/favicon.png" type="image/png">
-   <!-- Animate.css for smooth animations -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   <!-- Aos -->
+   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
    <style>
 
@@ -289,34 +289,17 @@
       <section class="power-innovation-section py-5 bg-light">
          <div class="container">
             <!-- Section Heading -->
-            <div class="section-heading text-center mb-5 animate__animated animate__fadeInDown">
-               <div class="icon-wrapper mb-3">
-                  <i class="fas fa-motorcycle"></i>
-               </div>
-               <h2 class="fw-bold display-4 mb-3">
-                  <span class="highlight">Power</span> Meets Innovation
-               </h2>
-               <p class="lead text-muted">
-                  Experience the future of biking with our high-performance, stylish, and innovative motorbikes.
-               </p>
+            <div class="section-heading text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+               <div class="icon-wrapper mb-3"> <i class="fas fa-motorcycle"></i> </div>
+               <h2 class="fw-bold display-4 mb-3"> <span class="highlight">Power</span> Meets Innovation </h2>
+               <p class="lead text-muted"> Experience the future of biking with our high-performance, stylish, and
+                  innovative motorbikes. </p>
             </div>
-
-            <!-- Heading -->
-            <!-- <div class="text-center mb-5">
-               <h2 class="fw-bold display-4 mb-3 animate__animated animate__fadeInDown">
-                  <span class="text-danger">Power</span> Meets Innovation
-               </h2>
-               <p class="lead text-muted animate__animated animate__fadeInUp">
-                  Experience the future of biking with our high-performance, stylish, and innovative motorbikes.
-               </p>
-            </div> -->
-
-            <div class="row align-items-center">
-               <!-- Motorbike 1 (Electric Bike: N-Lite) -->
-               <div class="col-lg-6 mb-4">
+            <div class="row align-items-center"> <!-- Motorbike 1 (Electric Bike: N-Lite) -->
+               <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-duration="1200">
                   <div class="bike-showcase card border-0 shadow-lg overflow-hidden animate__animated animate__zoomIn">
-                     <div class="position-relative">
-                        <img src="assets/images/bike/bike-1.jpg" class="img-fluid" alt="N-Lite Electric Bike">
+                     <div class="position-relative"> <img src="assets/images/bike/bike-1.jpg" class="img-fluid"
+                           alt="N-Lite Electric Bike">
                         <div
                            class="bike-info-overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
                            <h3 class="text-white fw-bold mb-2">N-Lite Electric</h3>
@@ -326,22 +309,17 @@
                               <li><i class="fas fa-battery-full"></i> Range: 160 km per charge</li>
                               <li><i class="fas fa-charging-station"></i> Fast Charging: 80% in 45 mins</li>
                            </ul>
-                           <p class="text-white mb-3">
-                              The N-Lite is the future of eco-friendly performance. Enjoy silent acceleration, instant
-                              torque, and smart connectivity with zero emissions.
-                           </p>
-                           <a href="#" class="motor-btn motor-btn-primary">Buy Now</a>
+                           <p class="text-white mb-3"> The N-Lite is the future of eco-friendly performance. Enjoy
+                              silent acceleration, instant torque, and smart connectivity with zero emissions. </p> <a
+                              href="#" class="motor-btn motor-btn-primary">Buy Now</a>
                         </div>
                      </div>
                   </div>
-               </div>
-
-
-               <!-- Motorbike 2 (Electric Bike: Air-1) -->
-               <div class="col-lg-6 mb-4">
+               </div> <!-- Motorbike 2 (Electric Bike: Air-1) -->
+               <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-duration="1200">
                   <div class="bike-showcase card border-0 shadow-lg overflow-hidden animate__animated animate__zoomIn">
-                     <div class="position-relative">
-                        <img src="assets/images/bike/bike-2.jpg" class="img-fluid" alt="Air-1 Electric Bike">
+                     <div class="position-relative"> <img src="assets/images/bike/bike-2.jpg" class="img-fluid"
+                           alt="Air-1 Electric Bike">
                         <div
                            class="bike-info-overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
                            <h3 class="text-white fw-bold mb-2">Air-1 Electric</h3>
@@ -351,19 +329,133 @@
                               <li><i class="fas fa-battery-full"></i> Range: 200 km per charge</li>
                               <li><i class="fas fa-charging-station"></i> Fast Charging: 100% in 1 hour</li>
                            </ul>
-                           <p class="text-white mb-3">
-                              Air-1 redefines electric mobility with ultra-fast charging, extended range, and an
-                              aerodynamic design that delivers both power and luxury for modern riders.
-                           </p>
-                           <a href="#" class="motor-btn motor-btn-primary">Buy Now</a>
+                           <p class="text-white mb-3"> Air-1 redefines electric mobility with ultra-fast charging,
+                              extended range, and an aerodynamic design that delivers both power and luxury for modern
+                              riders. </p> <a href="#" class="motor-btn motor-btn-primary">Buy Now</a>
                         </div>
                      </div>
                   </div>
                </div>
-
             </div>
          </div>
       </section>
+
+
+      <!-- Counter Section with Background Image & Overlay -->
+      <section id="counters" class="counter-section text-white position-relative"
+         style="background: url('assets/images/slider/nazran-slider-3.jpg') center/cover no-repeat;">
+         <!-- Overlay -->
+         <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+
+         <div class="container position-relative z-1">
+            <div class="row text-center justify-content-center">
+               <!-- Bikes Sold -->
+               <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                  <div class="p-4">
+                     <i class="fas fa-motorcycle fa-2x text-warning mb-3"></i>
+                     <h2 class="fw-bold"><span class="counter" data-target="2500">0</span>+</h2>
+                     <p class="mb-0">Bikes Sold</p>
+                  </div>
+               </div>
+               <!-- Happy Customers -->
+               <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                  <div class="p-4">
+                     <i class="fas fa-smile-beam fa-2x text-info mb-3"></i>
+                     <h2 class="fw-bold"><span class="counter" data-target="5000">0</span>+</h2>
+                     <p class="mb-0">Happy Customers</p>
+                  </div>
+               </div>
+               <!-- Service Centers -->
+               <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="300">
+                  <div class="p-4">
+                     <i class="fas fa-tools fa-2x text-danger mb-3"></i>
+                     <h2 class="fw-bold"><span class="counter" data-target="15">0</span>+</h2>
+                     <p class="mb-0">Authorized Service Centers</p>
+                  </div>
+               </div>
+               <!-- Years in Business -->
+               <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                  <div class="p-4">
+                     <i class="fas fa-calendar-check fa-2x text-success mb-3"></i>
+                     <h2 class="fw-bold"><span class="counter" data-target="15">0</span>+</h2>
+                     <p class="mb-0">Years of Excellence</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Why Choose Nazran Motors Section -->
+      <section class="why-choose-section">
+         <div class="container">
+            <!-- Section Heading -->
+            <div class="section-heading text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+               <div class="icon-wrapper mb-3"> <i class="fas fa-motorcycle"></i> </div>
+               <h2 class="fw-bold display-4 mb-3"> <span class="highlight">Why</span> Choose Nazran Motors?</h2>
+               <p class="lead text-muted"> Discover why our electric motorbikes are redefining performance,
+                  sustainability, and safety for modern
+                  riders. </p>
+            </div>
+
+            <!-- Features Row -->
+            <div class="row text-center">
+               <!-- Feature 1 -->
+               <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="feature-box p-4 shadow-sm rounded h-100">
+                     <div class="icon-circle mb-3 text-primary">
+                        <i class="fas fa-bolt"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Electric Power</h5>
+                     <p class="text-muted small mb-0">
+                        Zero emissions with powerful motors delivering instant torque and smooth acceleration.
+                     </p>
+                  </div>
+               </div>
+
+               <!-- Feature 2 -->
+               <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="feature-box p-4 shadow-sm rounded h-100">
+                     <div class="icon-circle mb-3 text-success">
+                        <i class="fas fa-battery-full"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Long Battery Life</h5>
+                     <p class="text-muted small mb-0">
+                        Advanced lithium batteries with extended range and ultra-fast charging technology.
+                     </p>
+                  </div>
+               </div>
+
+               <!-- Feature 3 -->
+               <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                  <div class="feature-box p-4 shadow-sm rounded h-100">
+                     <div class="icon-circle mb-3 text-danger">
+                        <i class="fas fa-shield-alt"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Advanced Safety</h5>
+                     <p class="text-muted small mb-0">
+                        Equipped with ABS, traction control, and smart systems for maximum rider protection.
+                     </p>
+                  </div>
+               </div>
+
+               <!-- Feature 4 -->
+               <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                  <div class="feature-box p-4 shadow-sm rounded h-100">
+                     <div class="icon-circle mb-3 text-warning">
+                        <i class="fas fa-leaf"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Eco-Friendly</h5>
+                     <p class="text-muted small mb-0">
+                        Sustainable mobility solutions for a cleaner, greener, and cost-effective future.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
 
 
 
@@ -454,12 +546,12 @@
    <script src="assets/js/script.js"></script>
    <!-- Responsive Menu JS -->
    <script src="assets/js/responsiveMenu.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
    <script>
       AOS.init();
    </script>
-   <script> new WOW().init(); </script>
+
 
    <script>
       document.querySelectorAll(".faq-question").forEach(button => {

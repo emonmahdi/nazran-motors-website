@@ -666,6 +666,10 @@ About Section Styles
 /* =====================
 Counter Section
 ======================== */
+.counter-section {
+  padding: 60px 0;
+  overflow: hidden;
+}
 #counters i {
   transition: transform 0.3s ease-in-out;
 }
@@ -673,6 +677,47 @@ Counter Section
   transform: scale(1.2) rotate(10deg);
 }
 
+/* =====================
+Why Choose Section
+======================== */
+.why-choose-section {
+  background-color: #ddd;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.highlight {
+  color: var(--primary-color);
+}
+
+.feature-box {
+  background-color: #fff;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  position: relative;
+}
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover .icon-circle {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
+}
 /* =======================
 Footer Styles
 ========================== */
