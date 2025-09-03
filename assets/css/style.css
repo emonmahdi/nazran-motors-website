@@ -7,6 +7,7 @@
   --primary: #ea202a;
   --secondary: #939496;
   --background: #ffffff;
+  --btn-hover: #b9151b;
   --font-family: "Inter", sans-serif;
   --text: #212529;
   --text-para: #5c5f71;
@@ -471,7 +472,9 @@ Section title Styles
 .mobile-menu ul > li.open > a::after {
   transform: translateY(-50%) rotate(180deg); /* ▲ */
 }
-/* -------------Slider Section --------------------- */
+/* ===================
+ Slider Section  Start
+======================*/
 .carousel-item img {
   height: 90vh;
   min-height: 500px;
@@ -573,7 +576,9 @@ Section title Styles
   }
 }
 
-/* power-innovation-section Start */
+/* =========================
+Power-innovation-section Start 
+============================*/
 .power-innovation-section {
   background: #f8f9fa;
 }
@@ -631,8 +636,9 @@ Section title Styles
   padding: 10px 25px;
   font-size: 1.1rem;
 }
-/* Power-innovation-section End */
-/* -----------About Section Styles ----------------- */
+/* =========================
+About Section Styles 
+============================ */
 .about-section {
   padding: 40px 0;
   overflow: hidden;
@@ -657,7 +663,9 @@ Section title Styles
   font-weight: bold;
 }
 
-/* -----------Counter Section---------------- */
+/* =====================
+Counter Section
+======================== */
 #counters i {
   transition: transform 0.3s ease-in-out;
 }
@@ -665,7 +673,9 @@ Section title Styles
   transform: scale(1.2) rotate(10deg);
 }
 
-/* -----------Footer Styles ----------------- */
+/* =======================
+Footer Styles
+========================== */
 .footer {
   background-color: #101010;
   color: #eee;
@@ -748,7 +758,7 @@ Section title Styles
 }
 
 .newsletter button:hover {
-  background-color: #b9151b;
+  background-color: var(--btn-hover);
 }
 
 .footer-bottom {
