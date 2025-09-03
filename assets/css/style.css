@@ -637,6 +637,183 @@ Power-innovation-section Start
   font-size: 1.1rem;
 }
 /* =========================
+Dealarship Section
+============================ */
+.dealership-section {
+  padding: 80px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
+      no-repeat center center/cover;
+  color: white;
+  position: relative;
+}
+
+.bd-flag-theme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: var(--bd-green);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  z-index: 1;
+}
+
+.bd-flag-theme:after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: var(--bd-red);
+  border-radius: 50%;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.section-title:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  margin: 15px 0;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #c81a22;
+  border-color: #c81a22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+  /* height: 100%; */
+  border-left: 4px solid var(--primary);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: var(--primary);
+  color: white;
+  position: relative;
+}
+
+.modal-header:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bd-green) 50%, var(--bd-red) 50%);
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(234, 32, 42, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+.required-field:after {
+  content: "*";
+  color: var(--primary);
+  margin-left: 4px;
+}
+
+.bangladesh-map {
+  position: relative;
+  height: 200px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHBhdGggZmlsbD0iIzAwNmE0ZSIgZD0iTTAgMGgyMDB2MjAwSDB6Ii8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI1MCIgZmlsbD0iI2Y0MmE0MSIvPjwvc3ZnPg==")
+    no-repeat center center;
+  background-size: contain;
+  margin: 20px 0;
+}
+
+.location-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .dealership-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .benefit-card {
+    margin-bottom: 15px;
+  }
+
+  .bangladesh-map {
+    height: 150px;
+  }
+}
+/* =========================
 About Section Styles 
 ============================ */
 .about-section {
@@ -856,6 +1033,208 @@ Footer Styles
 
 .breadcrumb-item.active {
   color: #ffc107;
+}
+
+.founder-section {
+  padding: 50px 0;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-section .section-title {
+  position: relative;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.founder-section .section-title:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  margin: 15px 0 25px;
+  margin: 15px auto;
+}
+
+.founder-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.founder-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.founder-img {
+  height: 100%;
+  min-height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80")
+      no-repeat center center/cover;
+}
+
+@media (max-width: 992px) {
+  .founder-img {
+    min-height: 300px;
+  }
+}
+
+.founder-content {
+  padding: 40px;
+}
+
+.founder-name {
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+.founder-title {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  opacity: 0.2;
+  margin-bottom: 20px;
+}
+
+.founder-message {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  color: var(--dark);
+  margin-top: 20px;
+}
+
+.stats-container {
+  background: var(--primary);
+  padding: 60px 0;
+  color: white;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.values-title {
+  font-weight: 700;
+  color: var(--dark);
+  margin: 40px 0 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.values-title:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  margin: 10px 0;
+}
+
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.value-icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-right: 15px;
+  min-width: 40px;
+}
+
+.value-content h4 {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.value-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--secondary),
+    transparent
+  );
+  margin: 50px 0;
+}
+
+/* Decorative elements */
+.circle-decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 40px solid rgba(234, 32, 42, 0.05);
+  border-radius: 50%;
+  right: -150px;
+  bottom: -150px;
+  z-index: 0;
+}
+
+.square-decoration {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 20px solid rgba(147, 148, 150, 0.05);
+  top: 50px;
+  left: -75px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 60px 0;
+  }
+
+  .founder-content {
+    padding: 30px 25px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
 }
 
 /* ------------Contact Section------------------ */
