@@ -10,7 +10,7 @@
   --font-family: "Inter", sans-serif;
   --text: #212529;
   --text-para: #5c5f71;
-  --heading: #0056b3;
+  --heading: #101010;
   --muted: #adb5bd;
   --transition: 0.3s;
 }
@@ -75,28 +75,62 @@ ul li {
   color: #fff;
 }
 
-/* Section title */
+/* ================
+Section title Styles 
+======================*/
 
-.section-title h4 {
-  color: var(--secondary);
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+.section-heading {
+  position: relative;
+}
+
+.section-heading .icon-wrapper {
   display: inline-block;
-}
-.section-title .section-heading-title {
-  color: var(--primary);
-  font-size: 40px;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-.section-title p {
-  color: var(--text-para);
-  margin-bottom: 30px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 18px;
+  /* padding: 15px; */
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  animation: pulseIcon 1.5s infinite;
 }
 
+.section-heading h2 {
+  font-weight: 700;
+  color: var(--heading);
+  position: relative;
+  font-size: 2.8rem;
+}
+
+.section-heading h2 .highlight {
+  color: var(--primary);
+}
+
+.section-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Subtle icon animation */
+@keyframes pulseIcon {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* ================ Latest News Section Start ========== */
 .notice-bar {
   display: flex;
@@ -539,6 +573,65 @@ ul li {
   }
 }
 
+/* power-innovation-section Start */
+.power-innovation-section {
+  background: #f8f9fa;
+}
+
+/* Bike Card */
+.bike-showcase {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.bike-showcase:hover {
+  /* transform: translateY(-10px) scale(1.02); */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.bike-showcase img {
+  transition: transform 0.5s ease;
+}
+.bike-showcase:hover img {
+  transform: scale(1.15);
+}
+
+/* Overlay Styling */
+.bike-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+  color: #fff;
+}
+.bike-showcase:hover .bike-info-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* List Style in Overlay */
+.bike-info-overlay ul li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.bike-info-overlay i {
+  margin-right: 8px;
+  color: var(--primary);
+}
+
+/* Button */
+.bike-info-overlay .btn-danger {
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+}
+/* Power-innovation-section End */
 /* -----------About Section Styles ----------------- */
 .about-section {
   padding: 40px 0;
