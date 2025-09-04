@@ -614,7 +614,70 @@ Power-innovation-section Start
   transform: translateY(100%);
   transition: all 0.5s ease;
   color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+/* Desktop: Show on hover */
+.bike-showcase:hover .bike-info-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ Mobile Fix */
+@media (max-width: 768px) {
+  .bike-info-overlay {
+    position: relative; /* Remove absolute for mobile */
+    opacity: 1 !important; /* Always visible */
+    transform: none !important;
+    background: rgba(0, 0, 0, 0.7);
+    height: auto; /* Adjust height for content */
+    /* padding: 15px; */
+    margin-top: -5px; /* Slight overlap for styling */
+  }
+  .bike-showcase:hover .bike-info-overlay {
+    /* opacity: 1; */
+    transform: none !important;
+  }
+  .bike-showcase:hover img {
+    transform: none !important;
+  }
+  .bike-info-overlay h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .bike-info-overlay ul {
+    font-size: 14px;
+    padding-left: 0;
+  }
+
+  .bike-info-overlay p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .bike-info-overlay a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* .bike-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+  color: #fff;
+} */
 .bike-showcase:hover .bike-info-overlay {
   opacity: 1;
   transform: translateY(0);
