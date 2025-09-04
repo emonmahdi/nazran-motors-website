@@ -858,17 +858,41 @@ Counter Section
 Faq Section
 ======================== */
 
-.faq-section {
+/* .faq-section {
   background-image: url("/assets/images/faq.avif");
   background-repeat: no-repeat;
-  background-position: top right; /* Centered both ways */
-  background-size: contain; /* Ensure full image is visible */
-  background-attachment: scroll; /* Optional: 'fixed' for parallax effect */
-  background-color: #fff; /* Fallback background color */
+  background-position: top right;
+  background-size: contain;
+  background-attachment: scroll;
+  background-color: #fff;
   padding: 50px 20px;
   position: relative;
   z-index: 1;
+} */
+.faq-section {
+  background-image: url("/assets/images/faq.avif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Fill the section */
+  background-attachment: scroll;
+  background-color: #fff;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh; /* Ensure full height for background */
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .faq-section {
+    background-image: url("/assets/images/faq.avif");
+    background-position: center center; /* Center for mobile */
+    background-size: cover; /* Still cover */
+    min-height: auto; /* Let content define height */
+    padding: 40px 15px; /* Reduce padding for mobile */
+  }
+}
+
 .faq-question .section-title:after {
   margin: 20px auto;
 }
@@ -1188,8 +1212,7 @@ Footer Styles
   height: 100%;
   min-height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80")
-      no-repeat center center/cover;
+    url("/assets/images/founder.jpg") no-repeat center center/cover;
 }
 
 @media (max-width: 992px) {
@@ -1359,4 +1382,11 @@ Footer Styles
 .contact-section .school-btn-primary:hover {
   background-color: #fff;
   color: var(--primary);
+}
+/* Apply to all inputs and textareas */
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #999; /* Light gray */
+  opacity: 1; /* Ensure visibility in Firefox */
+  font-size: 14px; /* Optional: adjust font size */
 }
