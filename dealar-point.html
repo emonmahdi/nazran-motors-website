@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Nazran Motors</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Favicon (Optional) -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <!-- Animate.css for smooth animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        :root {
+            --primary: #ec1c24;
+            --secondary: #1c353d;
+            --light-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(28, 53, 61, 0.9), rgba(28, 53, 61, 0.8)),
+                url('https://images.unsplash.com/photo-1549399542-7e82138d43aa?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 100px 0 70px;
+            color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title:after {
+            margin: 0 auto;
+        }
+
+        .section-title h2 {
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 span {
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .dealer-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .dealer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .dealer-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dealer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dealer-card:hover .dealer-img img {
+            transform: scale(1.08);
+        }
+
+        .dealer-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .dealer-content {
+            padding: 25px;
+        }
+
+        .dealer-name {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .dealer-location {
+            color: #6c757d;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .dealer-location .dealer-card-icon {
+            margin-right: 8px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .dealer-info-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .dealer-info-item .dealer-card-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        .dealer-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 8px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+        .btn-primary:hover {
+            background-color: #d0171e;
+            border-color: #d0171e;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 8px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 450px;
+        }
+
+        .become-dealer {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(28, 53, 61, 0.95), rgba(28, 53, 61, 0.95)),
+                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+        }
+
+        .become-dealer h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--secondary);
+            padding: 12px 30px;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-light:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .dealer-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header Top -->
+    <header class="topbar-header text-white">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+                <!-- Left: Social Icons -->
+                <!-- <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-start gap-3">
+               <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+               <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div> -->
+                <!-- Center: Coaching Center Address -->
+                <div class="col-12 col-md-12 text-center">
+                    <!-- <span class="fw-bold text-white"><i class="fas fa-map-marker-alt me-1"></i> Address:
+
+                  Mymensingh Sadar, Bangladesh
+               </span><br> -->
+                    <!-- Latest New Section Start -->
+                    <div class="notice-bar">
+                        <div class="notice-label">Latest Update</div>
+                        <div class="notice-content">
+                            <div class="scroll-text">
+                                🚨 নাজরান মোটরস-এ নতুন মডেলের মোটর ও খুচরা যন্ত্রাংশের কালেকশন যুক্ত হয়েছে।
+                                এখনই অর্ডার করুন এবং বিশেষ ছাড় উপভোগ করুন!
+                                📦 হোম ডেলিভারি সেবা সারা দেশে উপলব্ধ।
+                                বিস্তারিত জানতে ভিজিট করুন আমাদের ওয়েবসাইট অথবা যোগাযোগ করুন হটলাইনে: ০১৭XXXXXXXX।
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest New Section End -->
+
+                </div>
+                <!-- Right: Mobile Number -->
+                <!-- <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end gap-2">
+               <span><i class="fas fa-phone-alt me-1 text-success"></i> +880 1711-000000</span>
+            </div> -->
+            </div>
+        </div>
+    </header>
+    <!-- Header Navigation -->
+    <nav class="header-bottom sticky-top shadow-sm bg-white">
+        <div class="container d-flex align-items-center justify-content-between py-2">
+
+            <!-- Logo -->
+            <a href="index.html" class="navbar-brand d-flex align-items-center me-3">
+                <img src="assets/images/logo/nazran-main.png" alt="Nazran Motors Logo" height="55">
+            </a>
+
+            <!-- Main Menu -->
+            <ul class="nav d-none d-md-flex mb-0 fw-semibold align-items-center ms-auto">
+                <li class="nav-item"><a href="index.html" class="nav-link px-3">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link px-3 ">About Us</a></li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle px-3" data-bs-toggle="dropdown">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="motors.html">Motors</a></li>
+                        <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                        <li><a class="dropdown-item" href="offers.html">Special Offers</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="dealar-point.html" class="nav-link active px-3">Dealer Point</a></li>
+
+                <!-- Gallery Dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle px-3" data-bs-toggle="dropdown">Gallery</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="gallery.html">Image Gallery</a></li>
+                        <li><a class="dropdown-item" href="videoGallery.html">Video Gallery</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="contact.html" class="nav-link px-3">Contact</a></li>
+            </ul>
+
+            <!-- Search Bar -->
+            <!-- <form class="d-none d-md-flex search-bar ms-4">
+            <input type="text" class="form-control search-input" placeholder="Search Motors, Parts..."
+               aria-label="Search">
+            <button type="submit" class="btn btn-danger search-btn ms-2">
+               <i class="fas fa-search"></i>
+            </button>
+         </form> -->
+
+            <!-- Cart Icon -->
+            <!-- <div class="d-none d-md-block ms-3">
+                <a href="cart.html" class="btn btn-outline-secondary position-relative">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="btn btn-outline-secondary position-relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                </a>
+
+            </div> -->
+
+            <!-- Mobile Menu -->
+            <button class="btn d-md-none" id="menu-toggle">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="closeMenu" class="btn-close btn-close-white ms-auto m-3"></button>
+        <ul class="list-unstyled ps-3 pt-4 pe-4">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="dealar-point.html">Dealer Point</a></li>
+            <li>
+                <a href="#">Gallery</a>
+                <ul class="submenu">
+                    <li><a href="gallery.html">Image Gallery</a></li>
+                    <li><a href="videoGallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="dealar-point.html">Dealer Point</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Start -->
+    <main>
+        <!-- Page Top Header -->
+        <section class="page-top-header text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold">Dealer Point</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dealer Point</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+        <!-- Dealers Section -->
+        <section class="dealer-section py-5">
+            <div class="container">
+                <div class="section-heading text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="icon-wrapper mb-3"> <i class="fas fa-motorcycle"></i> </div>
+                    <h2 class="section-title fw-bold display-4 mb-3"> <span class="highlight">Our Authorized</span>
+                        Dealers</h2>
+
+                </div>
+
+                <div class="row">
+                    <!-- Dealer Example -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dealer-card">
+                            <div class="dealer-img">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+                                    alt="">
+                                <div class="dealer-badge">Premium Dealer</div>
+                            </div>
+                            <div class="dealer-content">
+                                <h3 class="dealer-name">Nazran Motors Dhaka Central</h3>
+                                <div class="dealer-location">
+                                    <i class="fas fa-map-marker-alt dealer-card-icon"></i> Gulshan Avenue, Dhaka
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-phone-alt dealer-card-icon"></i> +880 1712 345678
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="far fa-clock dealer-card-icon"></i> 9:00 AM - 8:00 PM (Everyday)
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-tools dealer-card-icon"></i> Sales, Service, Parts, Financing
+                                </div>
+                                <div class="dealer-actions">
+                                    <a href="#" class="btn btn-primary">Get Directions</a>
+                                    <a href="#" class="btn btn-primary">Contact Dealer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dealer Example 2-->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dealer-card">
+                            <div class="dealer-img">
+                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    alt="">
+                                <div class="dealer-badge">Elite Dealer</div>
+                            </div>
+                            <div class="dealer-content">
+                                <h3 class="dealer-name">Nazran Motors Chittagong</h3>
+                                <div class="dealer-location">
+                                    <i class="fas fa-map-marker-alt dealer-card-icon"></i> Agrabad CDA, Chittagong
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-phone-alt dealer-card-icon"></i> +880 1712 345678
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="far fa-clock dealer-card-icon"></i> 9:00 AM - 8:00 PM (Everyday)
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-tools dealer-card-icon"></i> Sales, Service, Parts, Test
+                                </div>
+                                <div class="dealer-actions">
+                                    <a href="#" class="btn btn-primary">Get Directions</a>
+                                    <a href="#" class="btn btn-primary">Contact Dealer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dealer Example 3-->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dealer-card">
+                            <div class="dealer-img">
+                                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    alt="">
+                                <div class="dealer-badge">Authorized Dealer</div>
+                            </div>
+                            <div class="dealer-content">
+                                <h3 class="dealer-name">Nazran Motors Sylhet</h3>
+                                <div class="dealer-location">
+                                    <i class="fas fa-map-marker-alt dealer-card-icon"></i> Zindabazar, Sylhet
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-phone-alt dealer-card-icon"></i> +880 1712 345678
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="far fa-clock dealer-card-icon"></i> 9:00 AM - 8:00 PM (Everyday)
+                                </div>
+                                <div class="dealer-info-item">
+                                    <i class="fas fa-tools dealer-card-icon"></i> Sales, Service, Genuine Parts
+                                </div>
+                                <div class="dealer-actions">
+                                    <a href="#" class="btn btn-primary">Get Directions</a>
+                                    <a href="#" class="btn btn-primary">Contact Dealer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dealer 2 -->
+                    <!-- <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="dealer-card animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="dealer-img">
+                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    alt="Nazran Motors Chittagong Showroom">
+                                <div class="dealer-badge">Elite Dealer</div>
+                            </div>
+                            <div class="dealer-content">
+                                <h3 class="dealer-name">Nazran Motors Chittagong</h3>
+                                <div class="dealer-location">
+                                    <i class="fas fa-map-marker-alt dealer-card-icon"></i> Agrabad CDA, Chittagong
+                                </div>
+                                <div class="dealer-info">
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-phone dealer-card-icon"></i> +880 1812 345679
+                                    </div>
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-clock dealer-card-icon"></i> Open: 9:00 AM - 8:00 PM (Closed
+                                        Friday)
+                                    </div>
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-tools dealer-card-icon"></i> Sales, Service, Parts, Test
+                                        Rides
+                                    </div>
+                                </div>
+                                <div class="dealer-actions">
+                                    <a href="#" class="btn btn-primary">Get Directions</a>
+                                    <a href="#" class="btn btn-outline-primary">Contact Dealer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Dealer 3 -->
+                    <!-- <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="dealer-card animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="dealer-img">
+                                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    alt="Nazran Motors Sylhet Showroom">
+                                <div class="dealer-badge">Authorized Dealer</div>
+                            </div>
+                            <div class="dealer-content">
+                                <h3 class="dealer-name">Nazran Motors Sylhet</h3>
+                                <div class="dealer-location">
+                                    <i class="fas fa-map-marker-alt dealer-card-icon"></i> Zindabazar, Sylhet
+                                </div>
+                                <div class="dealer-info">
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-phone dealer-card-icon"></i> +880 1713 456780
+                                    </div>
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-clock dealer-card-icon"></i> Open: 9:00 AM - 8:00 PM (Everyday)
+                                    </div>
+                                    <div class="dealer-info-item">
+                                        <i class="fas fa-tools dealer-card-icon"></i> Sales, Service, Genuine Parts
+                                    </div>
+                                </div>
+                                <div class="dealer-actions">
+                                    <a href="#" class="btn btn-primary">Get Directions</a>
+                                    <a href="#" class="btn btn-outline-primary">Contact Dealer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Become Dealer -->
+        <section class="become-dealer">
+            <div class="container">
+                <h2>Interested in Becoming a Dealer?</h2>
+                <p>Join our network and grow with Nazran Motors. Get marketing support, training, and more.</p>
+                <button class="motor-btn motor-btn-primary mt-3" data-bs-toggle="modal"
+                    data-bs-target="#dealerModal">Apply
+                    Now</button>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="map-section py-5">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Find <span>Dealers Near You</span></h2>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.705890982212!2d90.41251831538203!3d23.810331292349668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7c839b94c3d%3A0x2e3e78e5a7b6e85d!2sGulshan%20Avenue!5e0!3m2!1sen!2sbd!4v1675857432450!5m2!1sen!2sbd"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dealer Application Modal -->
+        <div class="modal fade" id="dealerModal" tabindex="-1" aria-labelledby="dealerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content p-4">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dealerModalLabel">Become a Nazran Motors Dealer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name*</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email*</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone*</label>
+                                    <input type="tel" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Organization Name*</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Business Location*</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Years in Business*</label>
+                                    <input type="number" class="form-control" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Additional Details</label>
+                                    <textarea class="form-control" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-end mt-3">
+                                <button type="submit" class="btn btn-primary">Submit Application</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+    <!-- Main Content End -->
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row text-md-start">
+                <!-- Column 1: Logo & Social -->
+                <div class="col-md-3 mb-4">
+                    <div class="footer-logo mb-3">
+                        <a href="index.html" class="d-flex align-items-center">
+                            <img src="assets/images/logo/nazran-main.png" alt="Nazran Motors Logo" height="60"
+                                class="me-2">
+                        </a>
+                    </div>
+                    <p style="font-size: 14px; color: #bbb;">
+                        Nazran Motors – Delivering premium bikes, genuine parts, and unbeatable performance since 2010.
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white-50">About Us</a></li>
+                        <li><a href="motors.html" class="text-white-50">Our Bikes</a></li>
+                        <li><a href="parts.html" class="text-white-50">Genuine Parts</a></li>
+                        <li><a href="offers.html" class="text-white-50">Special Offers</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="service.html" class="text-white-50">Bike Servicing</a></li>
+                        <li><a href="financing.html" class="text-white-50">Financing Options</a></li>
+                        <li><a href="accessories.html" class="text-white-50">Accessories</a></li>
+                        <li><a href="warranty.html" class="text-white-50">Warranty Info</a></li>
+                        <li><a href="faqs.html" class="text-white-50">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" required class="form-control mb-2">
+                        <button type="submit" class="btn btn-danger w-100">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Column 5: Contact Info -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Contact Info</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Barisal, Bangladesh</li>
+                        <li><i class="fas fa-phone me-2"></i> +880 1712-345678</li>
+                        <li><i class="fas fa-envelope me-2"></i> support@nazranmotors.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon - Sat: 9:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom text-center py-3 mt-4 border-top border-secondary">
+                &copy; 2025 Nazran Motors. All Rights Reserved | Powered by Passion for Riders
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Bootstrap JS (with Popper) -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="assets/js/all.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <!-- Responsive Menu JS -->
+    <script src="assets/js/responsiveMenu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle("active");
+            });
+        });
+
+    </script>
+    <!-- counter -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        let counterSection = document.querySelector("#counters");
+        let started = false;
+        window.addEventListener("scroll", () => {
+            let sectionTop = counterSection.offsetTop - window.innerHeight + 200;
+            if (window.scrollY > sectionTop && !started) {
+                animateCounters();
+                started = true;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
