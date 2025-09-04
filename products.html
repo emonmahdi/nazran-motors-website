@@ -17,6 +17,330 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <!-- Animate.css for smooth animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        :root {
+            --primary: #ea202a;
+            --secondary: #939496;
+            --dark: #1c353d;
+            --light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .page-top-header {
+            background: linear-gradient(rgba(28, 53, 61, 0.9), rgba(28, 53, 61, 0.8)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+        }
+
+        .products-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 span {
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .category-filter {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-btn {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .product-category {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .product-features {
+            margin-bottom: 20px;
+        }
+
+        .product-feature {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .product-feature .product-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            min-width: 20px;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 8px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #d0171e;
+            border-color: #d0171e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 8px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .special-offers {
+            padding: 80px 0;
+            background: linear-gradient(rgba(234, 32, 42, 0.05), rgba(234, 32, 42, 0.05));
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .offer-badge {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            font-weight: 700;
+            display: inline-block;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border-radius: 4px;
+        }
+
+        .testimonial-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        /* .testimonial-text::before {
+            content: "" ";
+             font-size: 60px;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: Arial;
+        } */
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-details h5 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .author-details p {
+            color: var(--secondary);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-top-header {
+                padding: 80px 0 40px;
+            }
+
+            .products-section {
+                padding: 60px 0;
+            }
+
+            .category-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -138,11 +462,156 @@
             </div>
         </section>
         <!-- Body content -->
-        <section>
+        <!-- Products Section -->
+        <section class="products-section">
             <div class="container">
-                <h2>Products</h2>
+                <!-- Section Title -->
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Explore Our <span>Premium Products</span></h2>
+                    <p>Discover our range of high-performance motorbikes, genuine parts, and accessories</p>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="category-filter" data-aos="fade-up" data-aos-delay="100">
+                    <button class="category-btn active" data-filter="all">All Products</button>
+                    <button class="category-btn" data-filter="bike">Motorbikes</button>
+                    <button class="category-btn" data-filter="parts">Spare Parts</button>
+                    <button class="category-btn" data-filter="accessory">Accessories</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="row" id="productGrid">
+                    <!-- Product 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="bike">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/bike/bike-1.jpg" alt="Nazran X1 Pro">
+                                <div class="product-badge">New</div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Nazran X1 Pro</h3>
+                                <span class="product-category">Sports Bike</span>
+                                <div class="product-features">
+                                    <div class="product-feature"><i class="fas fa-tachometer-alt product-icon"></i> Top
+                                        Speed: 140
+                                        km/h</div>
+                                    <div class="product-feature"><i class="fas fa-gas-pump product-icon"></i> Mileage:
+                                        45 km/l</div>
+                                    <div class="product-feature"><i class="fas fa-cog product-icon"></i> Engine: 150cc
+                                        Liquid Cooled
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <div>
+                                        <span class="price-tag">৳ 185,000</span>
+                                        <span class="original-price">৳ 195,000</span>
+                                    </div>
+                                    <button class="btn btn-primary">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="bike">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/bike/b1.jpg" alt="Nazran Cruiser 200">
+                                <div class="product-badge">Best Seller</div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Nazran Cruiser 200</h3>
+                                <span class="product-category">Cruiser Bike</span>
+                                <div class="product-features">
+                                    <div class="product-feature"><i class="fas fa-tachometer-alt product-icon"></i> Top
+                                        Speed: 120
+                                        km/h</div>
+                                    <div class="product-feature"><i class="fas fa-gas-pump product-icon"></i> Mileage:
+                                        40 km/l</div>
+                                    <div class="product-feature"><i class="fas fa-cog product-icon"></i> Engine: 200cc
+                                        Air Cooled
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <div>
+                                        <span class="price-tag">৳ 215,000</span>
+                                        <span class="original-price">৳ 225,000</span>
+                                    </div>
+                                    <button class="btn btn-primary">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="parts">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/bike/b2.jpg" alt="Performance Exhaust">
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Performance Exhaust System</h3>
+                                <span class="product-category">Spare Part</span>
+                                <div class="product-features">
+                                    <div class="product-feature"><i class="fas fa-bolt product-icon"></i> Increases
+                                        power by 10%
+                                    </div>
+                                    <div class="product-feature"><i class="fas fa-weight product-icon"></i> Lightweight
+                                        stainless
+                                        steel</div>
+                                    <div class="product-feature"><i class="fas fa-shield-alt product-icon"></i> 1 year
+                                        warranty</div>
+                                </div>
+                                <div class="product-price">
+                                    <div>
+                                        <span class="price-tag">৳ 12,500</span>
+                                        <span class="original-price">৳ 14,000</span>
+                                    </div>
+                                    <button class="btn btn-primary">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="accessory">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="assets/images/bike/b3.jpg" alt="Premium Helmet">
+                                <div class="product-badge">Sale</div>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-name">Nazran Premium Helmet</h3>
+                                <span class="product-category">Safety Accessory</span>
+                                <div class="product-features">
+                                    <div class="product-feature"><i class="fas fa-shield-alt product-icon"></i> DOT &
+                                        ECE Certified
+                                    </div>
+                                    <div class="product-feature"><i class="fas fa-wind product-icon"></i> Advanced
+                                        ventilation system
+                                    </div>
+                                    <div class="product-feature"><i class="fas fa-palette product-icon"></i> Multiple
+                                        colors
+                                        available</div>
+                                </div>
+                                <div class="product-price">
+                                    <div>
+                                        <span class="price-tag">৳ 4,200</span>
+                                        <span class="original-price">৳ 4,800</span>
+                                    </div>
+                                    <button class="btn btn-primary">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Products ... -->
+                </div>
             </div>
         </section>
+
+
+
 
 
     </main>
@@ -285,6 +754,33 @@
                 animateCounters();
                 started = true;
             }
+        });
+    </script>
+    <!-- Filtering Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".category-btn");
+            const products = document.querySelectorAll(".product-item");
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    // Remove active class from all buttons
+                    buttons.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+
+                    const filter = btn.getAttribute("data-filter");
+
+                    products.forEach(item => {
+                        if (filter === "all" || item.getAttribute("data-category") === filter) {
+                            item.style.display = "block";
+                            item.style.opacity = 0;
+                            setTimeout(() => item.style.opacity = 1, 100);
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                });
+            });
         });
     </script>
 
