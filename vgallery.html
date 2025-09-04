@@ -5,20 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>School Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>Nazran Motors - Video Gallery</title>
     <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="assets/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <!-- Favicon (Optional) -->
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Animate.css for smooth animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css">
-
     <style>
         :root {
             --primary: #ec1c24;
@@ -26,19 +19,134 @@
             --bg-light: #f9f9f9;
         }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .topbar-header {
+            background-color: var(--secondary);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .notice-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(236, 28, 36, 0.1);
+            border-radius: 4px;
+            padding: 6px 12px;
+            margin: 5px 0;
+        }
+
+        .notice-label {
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .notice-content {
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .scroll-text {
+            white-space: nowrap;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .header-bottom {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: var(--secondary) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .page-top-header {
+            background: linear-gradient(rgba(28, 53, 61, 0.9), rgba(28, 53, 61, 0.8)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0 60px;
+            color: white;
+        }
+
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         .gallery-section {
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .section-title {
-            font-size: 2rem;
-            /* margin-bottom: 30px; */
+            font-size: 2.5rem;
+            margin-bottom: 30px;
             color: var(--secondary);
+            position: relative;
+            padding-bottom: 15px;
         }
 
-        .gallery-section .section-title:after {
-            margin: 20px auto;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
         }
 
         .section-title span {
@@ -151,8 +259,107 @@
             transform: scale(1.1);
             border-color: white;
         }
-    </style>
 
+        .footer {
+            background: linear-gradient(to bottom, #2c3e50, #1c2530);
+        }
+
+        .footer-logo img {
+            filter: brightness(0) invert(1);
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer h5 {
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            transition: color 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: white !important;
+            padding-left: 5px;
+        }
+
+        .newsletter input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .video-thumbnail {
+                margin-bottom: 25px;
+            }
+
+            .play-btn {
+                font-size: 3rem;
+            }
+
+            .notice-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .notice-label {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+
+            .modal-close-btn {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -160,19 +367,7 @@
     <header class="topbar-header text-white">
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
-                <!-- Left: Social Icons -->
-                <!-- <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-start gap-3">
-               <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-               <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-               <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-               <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div> -->
-                <!-- Center: Coaching Center Address -->
                 <div class="col-12 col-md-12 text-center">
-                    <!-- <span class="fw-bold text-white"><i class="fas fa-map-marker-alt me-1"></i> Address:
-
-                  Mymensingh Sadar, Bangladesh
-               </span><br> -->
                     <!-- Latest New Section Start -->
                     <div class="notice-bar">
                         <div class="notice-label">Latest Update</div>
@@ -185,24 +380,19 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Latest New Section End -->
-
                 </div>
-                <!-- Right: Mobile Number -->
-                <!-- <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end gap-2">
-               <span><i class="fas fa-phone-alt me-1 text-success"></i> +880 1711-000000</span>
-            </div> -->
             </div>
         </div>
     </header>
+
     <!-- Header Navigation -->
     <nav class="header-bottom sticky-top shadow-sm bg-white">
         <div class="container d-flex align-items-center justify-content-between py-2">
-
             <!-- Logo -->
             <a href="index.html" class="navbar-brand d-flex align-items-center me-3">
-                <img src="assets/images/logo/nazran-main.png" alt="Nazran Motors Logo" height="55">
+                <img src="https://via.placeholder.com/180x55/1c353d/ffffff?text=Nazran+Motors" alt="Nazran Motors Logo"
+                    height="55">
             </a>
 
             <!-- Main Menu -->
@@ -240,18 +430,9 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link px-3">Contact</a></li>
             </ul>
 
-            <!-- Search Bar -->
-            <!-- <form class="d-none d-md-flex search-bar ms-4">
-            <input type="text" class="form-control search-input" placeholder="Search Motors, Parts..."
-               aria-label="Search">
-            <button type="submit" class="btn btn-danger search-btn ms-2">
-               <i class="fas fa-search"></i>
-            </button>
-         </form> -->
-
             <!-- Cart Icon -->
             <div class="d-none d-md-block ms-3">
-                <a href="cart.html" class="btn btn-outline-secondary position-relative">
+                <a href="cart.html" class="btn btn-outline-secondary position-relative me-2">
                     <i class="fas fa-user"></i>
                 </a>
                 <a href="cart.html" class="btn btn-outline-secondary position-relative">
@@ -259,7 +440,6 @@
                     <span
                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
                 </a>
-
             </div>
 
             <!-- Mobile Menu -->
@@ -269,9 +449,8 @@
         </div>
     </nav>
 
-
     <!-- Mobile Slide Menu -->
-    <div id="mobileMenu" class="mobile-menu">
+    <div id="mobileMenu" class="mobile-menu" style="display: none;">
         <button id="closeMenu" class="btn-close btn-close-white ms-auto m-3"></button>
         <ul class="list-unstyled ps-3 pt-4 pe-4">
             <li><a href="index.html">Home</a></li>
@@ -309,11 +488,11 @@
         <!-- Page Top Header -->
         <section class="page-top-header text-center">
             <div class="container">
-                <h1 class="display-4 fw-bold">Video Gallery </h1>
+                <h1 class="display-4 fw-bold">Video Gallery</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Video Gallery </li>
+                        <li class="breadcrumb-item active" aria-current="page">Video Gallery</li>
                     </ol>
                 </nav>
             </div>
@@ -331,8 +510,8 @@
                     <!-- Video 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg"
+                            data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
                                 alt="Product Demonstration">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
@@ -340,28 +519,30 @@
                         </div>
                         <div class="video-info">
                             <div class="video-title">Nazran Motors X5 Series Demo</div>
+                            <div class="video-duration">4:25 min</div>
                         </div>
                     </div>
 
                     <!-- Video 2 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg" alt="Customer Review">
+                            data-video="https://www.youtube.com/embed/ysz5S6PUM-U">
+                            <img src="https://img.youtube.com/vi/ysz5S6PUM-U/maxresdefault.jpg" alt="Customer Review">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
                             </div>
                         </div>
                         <div class="video-info">
                             <div class="video-title">Customer Experience Review</div>
+                            <div class="video-duration">7:42 min</div>
                         </div>
                     </div>
 
                     <!-- Video 3 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg"
+                            data-video="https://www.youtube.com/embed/jNQXAC9IVRw">
+                            <img src="https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg"
                                 alt="Installation Guide">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
@@ -369,42 +550,45 @@
                         </div>
                         <div class="video-info">
                             <div class="video-title">Installation Guide - Pro Series</div>
+                            <div class="video-duration">12:15 min</div>
                         </div>
                     </div>
 
                     <!-- Video 4 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg" alt="Maintenance Tips">
+                            data-video="https://www.youtube.com/embed/L_jWHffIx5E">
+                            <img src="https://img.youtube.com/vi/L_jWHffIx5E/maxresdefault.jpg" alt="Maintenance Tips">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
                             </div>
                         </div>
                         <div class="video-info">
                             <div class="video-title">Maintenance Tips & Tricks</div>
+                            <div class="video-duration">9:33 min</div>
                         </div>
                     </div>
 
                     <!-- Video 5 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg" alt="Company Event">
+                            data-video="https://www.youtube.com/embed/fJ9rUzIMcZQ">
+                            <img src="https://img.youtube.com/vi/fJ9rUzIMcZQ/maxresdefault.jpg" alt="Company Event">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
                             </div>
                         </div>
                         <div class="video-info">
                             <div class="video-title">Annual Dealer Conference 2023</div>
+                            <div class="video-duration">18:27 min</div>
                         </div>
                     </div>
 
                     <!-- Video 6 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal"
-                            data-video="https://www.youtube.com/embed/d56mG7DezGs?si=w6Yt3FkgxoGlhomZ">
-                            <img src="https://img.youtube.com/vi/d56mG7DezGs/maxresdefault.jpg"
+                            data-video="https://www.youtube.com/embed/0qO6Nw_6u4A">
+                            <img src="https://img.youtube.com/vi/0qO6Nw_6u4A/maxresdefault.jpg"
                                 alt="New Product Launch">
                             <div class="video-overlay">
                                 <i class="fa-solid fa-circle-play play-btn"></i>
@@ -412,6 +596,7 @@
                         </div>
                         <div class="video-info">
                             <div class="video-title">New Product Launch Event</div>
+                            <div class="video-duration">22:45 min</div>
                         </div>
                     </div>
                 </div>
@@ -436,11 +621,9 @@
                 </div>
             </div>
         </div>
-
-
-
     </main>
     <!-- Main Content End -->
+
     <!-- Footer Section -->
     <footer class="footer bg-dark text-white pt-5">
         <div class="container">
@@ -449,8 +632,8 @@
                 <div class="col-md-3 mb-4">
                     <div class="footer-logo mb-3">
                         <a href="index.html" class="d-flex align-items-center">
-                            <img src="assets/images/logo/nazran-main.png" alt="Nazran Motors Logo" height="60"
-                                class="me-2">
+                            <img src="https://via.placeholder.com/180x55/ffffff/1c353d?text=Nazran+Motors"
+                                alt="Nazran Motors Logo" height="60" class="me-2">
                         </a>
                     </div>
                     <p style="font-size: 14px; color: #bbb;">
@@ -516,20 +699,12 @@
         </div>
     </footer>
     <!-- Footer End -->
+
     <!-- Bootstrap JS (with Popper) -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome -->
-    <script src="assets/js/all.min.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
-    <!-- Responsive Menu JS -->
-    <script src="assets/js/responsiveMenu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script> new WOW().init(); </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
     <script>
         // Video Modal functionality
         document.addEventListener('DOMContentLoaded', function () {
@@ -564,7 +739,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>
